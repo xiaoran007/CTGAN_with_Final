@@ -131,7 +131,7 @@ def load_CreditApproval_data():
 
 def load_CreditRisk_data():
     dataset = pd.read_csv("Datasets/Credit Risk/customer_data_drop_na.csv", delimiter=',')
-    X = dataset.drop(['label', 'ID'], axis=1)
+    X = dataset.drop(['label', 'id'], axis=1)
     y = dataset['label']
     y.astype('int')
     X = MinMaxScaler().fit_transform(X)
@@ -145,8 +145,8 @@ def load_CreditRisk_data():
 def load_CreditCard_data():
     # dataset = pd.read_excel("datasets/default_of_credit_card_clients.xls", header=1)
     dataset = pd.read_csv("Datasets/Default of Credit Card Clients Dataset/UCI_Credit_Card.csv", delimiter=',')
-    X = dataset.drop(['default payment next month', 'ID'], axis=1)
-    y = dataset['default payment next month']
+    X = dataset.drop(['default.payment.next.month', 'ID'], axis=1)
+    y = dataset['default.payment.next.month']
     X = MinMaxScaler().fit_transform(X)
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
     X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.125, random_state=0,
@@ -195,19 +195,83 @@ def load_FakeBills_data():
 
 def load_LoanPrediction_data():
     dataset = pd.read_csv("Datasets/Loan Prediction Problem Dataset/train_dropna.csv", delimiter=',')
-    pass
+    X = dataset.drop(['Loan_ID', 'Loan_Status'], axis=1)
+    y = dataset['Loan_Status']
+    y = y.replace({'N': 0, 'Y': 1})
+    y.astype('int')
+    le = LabelEncoder()
+    X['Gender'] = le.fit_transform(X['Gender'])
+    X['Married'] = le.fit_transform(X['Married'])
+    X['Dependents'] = le.fit_transform(X['Dependents'])
+    X['Education'] = le.fit_transform(X['Education'])
+    X['Self_Employed'] = le.fit_transform(X['Self_Employed'])
+    X['Property_Area'] = le.fit_transform(X['Property_Area'])
+    X = MinMaxScaler().fit_transform(X)
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.125, random_state=0,
+                                                      stratify=y_train)
+
+    return X_train, y_train, X_val, y_val, X_test, y_test
 
 
 def load_PageBlock_data():
-    pass
+    dataset = pd.read_csv('Datasets/Page Blocks/page-block_new.csv', delimiter=',')
+    X = dataset.drop(['class'], axis=1)
+    y = dataset['class']
+    y = y.replace({3: 1, 1: 0, 2: 0, 4: 0, 5: 0})
+    y.astype('int')
+
+    X = MinMaxScaler().fit_transform(X)
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.125, random_state=0,
+                                                      stratify=y_train)
+
+    return X_train, y_train, X_val, y_val, X_test, y_test
 
 
 def load_PageBlockDel_data():
-    pass
+    dataset = pd.read_csv('Datasets/Page Blocks/page-block_new.csv', delimiter=',')
+    dataset = dataset.loc[~((dataset["class"] == 1) | (dataset["class"] == 4)), :].copy()
+    X = dataset.drop(['class'], axis=1)
+    y = dataset['class']
+    y = y.replace({3: 1, 2: 0, 5: 0})
+    y.astype('int')
+
+    X = MinMaxScaler().fit_transform(X)
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.125, random_state=0,
+                                                      stratify=y_train)
+
+    return X_train, y_train, X_val, y_val, X_test, y_test
 
 
 def load_PredictTerm_data():
-    pass
+    dataset = pd.read_csv('Datasets/Predict Term Deposit/Assignment-2_Data_dropna.csv', delimiter=',')
+    X = dataset.drop(['Id', 'y'], axis=1)
+    y = dataset['y']
+    y = y.replace({'no': 0, 'yes': 1})
+    y.astype('int')
+    le = LabelEncoder()
+    X['job'] = le.fit_transform(X['job'])
+    X['marital'] = le.fit_transform(X['marital'])
+    X['education'] = le.fit_transform(X['education'])
+    X['default'] = le.fit_transform(X['default'])
+    X['housing'] = le.fit_transform(X['housing'])
+    X['loan'] = le.fit_transform(X['loan'])
+    X['contact'] = le.fit_transform(X['contact'])
+    X['month'] = le.fit_transform(X['month'])
+    X['poutcome'] = le.fit_transform(X['poutcome'])
+
+    X = MinMaxScaler().fit_transform(X)
+
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.125, random_state=0,
+                                                      stratify=y_train)
+
+    return X_train, y_train, X_val, y_val, X_test, y_test
 
 
 def load_SouthGermanCredit_data():
@@ -246,18 +310,21 @@ def load_YeastUn_data():
 def Check(dataset_name):
     try:
         X_train, y_train, X_val, y_val, X_test, y_test = preprocess(dataset_name=dataset_name)
-        print(X_train)
-        print(y_train)
-        print(X_test)
-        print(y_test)
+        #print(X_train)
+        #rint(y_train)
+        #rint(X_test)
+        #rint(y_test)
     except:
         print("Err")
 
-
-if __name__ == "__main__":
+def Full():
     for i in Datasets_list:
         print(f"Dataset {i}:")
         Check(i)
         print('\n')
+
+
+if __name__ == "__main__":
+    load_PageBlockDel_data()
 
 
