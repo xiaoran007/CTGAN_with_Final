@@ -1,9 +1,8 @@
 import pandas as pd
 
-cols = ['height', 'length', 'area', 'eccen', 'p_black', 'p_and', 'mean_tr', 'blackpix', 'blackand',
-                            'wb_trans', 'class']
-dataset = pd.read_csv('Datasets/Predict Term Deposit/Assignment-2_Data.csv', delimiter=',')
+cols = ['Sequence Name', 'mcg', 'gvh', 'alm', 'mit', 'erl', 'pox', 'vac', 'nuc', 'class']
+dataset = pd.read_csv('Datasets/Yeast/yeast.data', names=cols, delimiter='\s+')
 print(dataset)
 dataset = dataset.dropna()
 print(dataset)
-dataset.to_csv('Datasets/Predict Term Deposit/Assignment-2_Data_dropna.csv', index=False)
+dataset.to_csv('Datasets/Yeast/yeast_new.csv', index=False)

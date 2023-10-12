@@ -55,7 +55,7 @@ def preprocess(dataset_name):
         return load_WineRed_data()
     elif dataset_name == "Yeast":
         return load_Yeast_data()
-    elif dataset_name == "FakeBills":
+    elif dataset_name == "YeastUn":
         return load_YeastUn_data()
 
 
@@ -292,19 +292,75 @@ def load_SouthGermanCredit_data():
 
 
 def load_Wine_data():
-    pass
+    cols = ['class', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'c10', 'c11', 'c12', 'c13']
+    dataset = pd.read_csv('Datasets/Wine/wine.data', names=cols, delimiter=',')
+    X = dataset.drop(['class'], axis=1)
+    y = dataset['class']
+    y = y.replace({1: 1, 2: 0, 3: 0})
+    y.astype('int')
+
+    X = MinMaxScaler().fit_transform(X)
+
+    # Split dataset into 7:1:2 for training : validation : testing
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.125, random_state=0,
+                                                      stratify=y_train)
+
+    return X_train, y_train, X_val, y_val, X_test, y_test
 
 
 def load_WineRed_data():
-    pass
+    cols = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7', 'c8', 'c9', 'c10', 'c11', 'class']
+    dataset = pd.read_csv("Datasets/Wine/winequality-red-8_vs_6.dat", names=cols, delimiter=',')
+    X = dataset.drop(["class"], axis=1)
+    y = dataset['class']
+    y = y.replace({'negative': 0, 'positive': 1})
+    y.astype('int')
+
+    X = MinMaxScaler().fit_transform(X)
+
+    # Split dataset into 7:1:2 for training : validation : testing
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.125, random_state=0,
+                                                      stratify=y_train)
+
+    return X_train, y_train, X_val, y_val, X_test, y_test
 
 
 def load_Yeast_data():
-    pass
+    dataset = pd.read_csv("Datasets/Yeast/yeast_new.csv", delimiter=',')
+    dataset = dataset.loc[((dataset["class"] == "ME2") | (dataset["class"] == "CYT"))]
+    X = dataset.drop(["Sequence Name", "class"], axis=1)
+    y = dataset['class']
+    y = y.replace({"ME2": 1, "CYT": 0})
+    y.astype('int')
+
+    X = MinMaxScaler().fit_transform(X)
+
+    # Split dataset into 7:1:2 for training : validation : testing
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.125, random_state=0,
+                                                      stratify=y_train)
+
+    return X_train, y_train, X_val, y_val, X_test, y_test
 
 
 def load_YeastUn_data():
-    pass
+    y_map = {"ME2": 1, "CYT": 0, "NUC": 0, "MIT": 0, "ME1": 0, "ME3": 0, "EXC": 0, "VAC": 0, "POX": 0, "ERL": 0}
+    dataset = pd.read_csv("Datasets/Yeast/yeast_new.csv", delimiter=',')
+    X = dataset.drop(["Sequence Name", "class"], axis=1)
+    y = dataset['class']
+    y = y.replace(y_map)
+    y.astype('int')
+
+    X = MinMaxScaler().fit_transform(X)
+
+    # Split dataset into 7:1:2 for training : validation : testing
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=0, stratify=y)
+    X_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.125, random_state=0,
+                                                      stratify=y_train)
+
+    return X_train, y_train, X_val, y_val, X_test, y_test
 
 
 def Check(dataset_name):
@@ -314,10 +370,11 @@ def Check(dataset_name):
         #rint(y_train)
         #rint(X_test)
         #rint(y_test)
+        print('Ok')
     except:
         print("Err")
 
-def Full():
+def Full_check():
     for i in Datasets_list:
         print(f"Dataset {i}:")
         Check(i)
@@ -325,6 +382,4 @@ def Full():
 
 
 if __name__ == "__main__":
-    load_PageBlockDel_data()
-
-
+    Full_check()
