@@ -21,11 +21,9 @@ class test_model():        #parent class
 
     def __call__(self):
         model = tf.keras.Sequential([
-        tf.keras.layers.Dense(32, activation='relu', kernel_regularizer=tf.keras.regularizers.L2(0.001)),
-        # tf.keras.layers.Dropout(0.45),
+        tf.keras.layers.Dense(32, activation='relu'),
         tf.keras.layers.LayerNormalization(),
-        tf.keras.layers.Dense(16, activation='relu', kernel_regularizer=tf.keras.regularizers.L2(0.001)),
-        # tf.keras.layers.Dropout(0.45),
+        tf.keras.layers.Dense(16, activation='relu'),
         tf.keras.layers.LayerNormalization(),
         tf.keras.layers.Dense(1)
         ])
