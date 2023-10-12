@@ -24,6 +24,10 @@ Datasets_list = ['Africa',
                  'YeastUn']
 
 
+def print_datasets_list():
+    print(Datasets_list)
+
+
 def preprocess(dataset_name):
     if dataset_name == 'Africa':
         return load_Africa_data()
