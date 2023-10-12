@@ -1,5 +1,8 @@
 from sklearn.linear_model import LogisticRegression
-Classifier_list = ['MLP',
+Classifier_list = ['MLP_High_Normal',
+                   'MLP_Low_Normal',
+                   'MLP_High_UnNormal',
+                   'MLP_Low_UnNormal'
                    'GaussianNB',
                    'KNeighborsClassifier',
                    'RandomForestClassifier',
