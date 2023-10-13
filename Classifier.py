@@ -53,7 +53,7 @@ Classifier_dict = {'GaussianNB': GaussianNB(),
                    'DecisionTreeClassifier': DecisionTreeClassifier(),
                    'XGBClassifier': XGBClassifier(tree_method="hist", device="cuda"),
                    'LGBMClassifier': LGBMClassifier(objective='binary'),
-                   'CatBoostClassifier': CatBoostClassifier(task_type="GPU", verbose=True),
+                   'CatBoostClassifier': CatBoostClassifier(task_type="GPU", verbose=True, iterations=100),
                    'HistGradientBoostingClassifier': HistGradientBoostingClassifier(verbose=1),
                    'GradientBoostingClassifier': GradientBoostingClassifier(),
                    'AdaBoostClassifier': AdaBoostClassifier(),
@@ -65,7 +65,7 @@ pipeline_rf = Pipeline([('RandomForestClassifier', RandomForestClassifier(n_jobs
 pipeline_dt = Pipeline([('DecisionTreeClassifier', DecisionTreeClassifier())])
 pipeline_xgb = Pipeline([('XGBClassifier', XGBClassifier(tree_method="hist", device="cuda"))])
 pipeline_lgbm = Pipeline([('LGBMClassifier', LGBMClassifier(objective='binary'))])
-pipeline_catB = Pipeline([('CatBoostClassifier', CatBoostClassifier(task_type="GPU", verbose=True))])
+pipeline_catB = Pipeline([('CatBoostClassifier', CatBoostClassifier(task_type="GPU", verbose=True, iterations=100))])
 pipeline_hist = Pipeline([('HistGradientBoostingClassifier', HistGradientBoostingClassifier(verbose=1))])
 pipeline_gradB = Pipeline([('GradientBoostingClassifier', GradientBoostingClassifier())])
 pipeline_adaB = Pipeline([('AdaBoostClassifier', AdaBoostClassifier())])
