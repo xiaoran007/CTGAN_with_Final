@@ -28,6 +28,30 @@ def print_datasets_list():
     print(Datasets_list)
 
 
+class Dataset:
+    def __init__(self, dataset_name):
+        self.DatasetName = dataset_name
+        self.Loader = None
+
+    def LoaderInit(self):
+        pass
+
+    def GetDataset(self):
+        pass
+
+    @staticmethod
+    def LoadAfrica():
+        dataset = pd.read_csv("Datasets/Africa Economic, Banking and Systemic Crisis Data/african_crises.csv")
+
+        X = dataset.drop(['banking_crisis', 'country'], axis=1)
+        y = dataset['banking_crisis']
+        y = y.replace({'no_crisis': 0, 'crisis': 1})
+        y.astype('int')
+
+        le = LabelEncoder()
+        X['cc3'] = le.fit_transform(X['cc3'])
+        X = MinMaxScaler().fit_transform(X)
+
 def preprocess(dataset_name):
     if dataset_name == 'Africa':
         return load_Africa_data()

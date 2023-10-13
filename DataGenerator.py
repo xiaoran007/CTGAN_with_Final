@@ -1,6 +1,7 @@
 from imblearn.over_sampling import SMOTE
-from src.choose_device import get_default_device, to_device, DeviceDataLoader
+from src.choose_device import get_default_device, to_device
 from src.fit import f1
+from ctgan import CTGAN
 import numpy as np
 import torch
 
@@ -19,6 +20,7 @@ class DataGenerator:
         self.device = get_default_device()
         self.X_train_SMOTE = None
         self.y_train_SMOTE = None
+        self.CTGAN = None
 
     def GenerateBaselineData(self):
         return self.X_train, self.y_train, self.X_val, self.y_val, self.X_test, self.y_test
@@ -28,7 +30,7 @@ class DataGenerator:
         return X_train_SMOTE, y_train_SMOTE, self.X_val, self.y_val, self.X_test, self.y_test
 
     def GenerateGANData(self):
-        if self.generatorG is None:
+        if self.generatorG is None or self.X_train_SMOTE is None:
             print("Err.")
         else:
             X_oversampled = self.X_train_SMOTE[(self.X_train.shape[0]):]
@@ -38,9 +40,30 @@ class DataGenerator:
             Trained_X_oversampled_G = self.generatorG(GANs_noise.float().to(self.device)).cpu().detach().numpy()
             Trained_G_dataset = np.concatenate((self.X_train_SMOTE[:(self.X_train.shape[0])], Trained_X_oversampled_G), axis=0)
             X_trained_G, y_trained_G = shuffle_in_unison(Trained_G_dataset, self.y_train_SMOTE)
+            return X_trained_G, y_trained_G, self.X_val, self.y_val, self.X_test, self.y_test
 
     def GenerateSGANData(self):
-        pass
+        if self.generatorSG is None or self.X_train_SMOTE is None:
+            print("Err.")
+        else:
+            X_oversampled = self.X_train_SMOTE[(self.X_train.shape[0]):]
+            X_oversampled = torch.from_numpy(X_oversampled)
+            X_oversampled = to_device(X_oversampled.float(), self.device)
+            Trained_X_oversampled_SG = self.generatorSG(X_oversampled.float().to(self.device)).cpu().detach().numpy()
+            Trained_SG_dataset = np.concatenate((self.X_train_SMOTE[:(self.X_train.shape[0])], Trained_X_oversampled_SG), axis=0)
+            X_trained_SG, y_trained_SG = shuffle_in_unison(Trained_SG_dataset, self.y_train_SMOTE)
+            return X_trained_SG, y_trained_SG, self.X_val, self.y_val, self.X_test, self.y_test
+
+    def GenerateCTGANData(self):
+        if self.CTGAN is None:
+            print("Err.")
+        else:
+            num_samples = np.count_nonzero(self.y_train == 0) - np.count_nonzero(self.y_train == 1)
+            synthetic_data_x = self.CTGAN.sample(num_samples)
+            synthetic_data_y = np.ones(num_samples)
+            X_train_ctgan = np.concatenate([synthetic_data_x, self.X_train], axis=0)
+            y_train_ctgan = np.concatenate([synthetic_data_y, self.y_train], axis=0)
+            return X_train_ctgan, y_train_ctgan, self.X_val, self.y_val, self.X_test, self.y_test
 
     def Set_GAN(self):
         device = self.device
@@ -67,6 +90,11 @@ class DataGenerator:
         self.X_train_SMOTE = X_train_SMOTE
         self.y_train_SMOTE = y_train_SMOTE
 
+    def Set_CTGAN(self):
+        self.CTGAN = CTGAN(batch_size=500, epochs=100, cuda=True, verbose=False)
+        X_train_fraud = self.X_train[self.y_train == 1]
+        self.CTGAN.fit(X_train_fraud)
+
 
 def GANs_two_class_real_data(X_train, y_train):  # Defining the real data for GANs
     X_real = []
@@ -90,3 +118,7 @@ def shuffle_in_unison(a, b):  # Shuffling the features and labels in unison.
         shuffled_a[new_index] = a[old_index]
         shuffled_b[new_index] = b[old_index]
     return shuffled_a, shuffled_b
+
+
+if __name__ == '__main__':
+    pass
