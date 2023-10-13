@@ -12,6 +12,7 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import Pipeline
 import math
+from src import MLP
 
 Classifier_list = ['MLP_High_Normal',
                    'MLP_Low_Normal',
@@ -72,8 +73,9 @@ pipeline_adaB = Pipeline([('AdaBoostClassifier', AdaBoostClassifier())])
 pipeline_lr = Pipeline([('LogisticRegression', LogisticRegression(n_jobs=-1))])
 '''
 
+
 class Classifier:
-    def __init__(self, X_train, y_train, X_val, y_val, X_test, y_test, classifier, model, epoch=30, batch_size=8192):
+    def __init__(self, X_train, y_train, X_val, y_val, X_test, y_test, classifier, model, in_round, epoch=30, batch_size=8192):
         self.X_train = X_train
         self.y_train = y_train
         self.X_val = X_val
@@ -82,6 +84,7 @@ class Classifier:
         self.y_test = y_test
         self.classifier = classifier
         self.model = model
+        self.in_round = in_round
         self.batch_size = batch_size
         self.epoch = epoch
 
@@ -181,4 +184,47 @@ class Classifier:
                     test_auc_array, train_auc_array, precision_array, recall_array, cm_list)
 
     def TestSingle(self):
-        pass
+        if self.classifier in tf_based_classifier:
+            MLP_Obj = MLP.MLP(X_train=self.X_train, y_train=self.y_train, X_test=self.X_test, y_test=self.y_test,
+                              test_name=self.model, test_round=self.in_round, batch_size=self.batch_size, epochs=self.epoch)
+            if self.classifier == 'MLP_High_Normal':
+                MLP_Obj.Set_High_Normal()
+            elif self.classifier == 'MLP_Low_Normal':
+                MLP_Obj.Set_Low_Normal()
+            elif self.classifier == 'MLP_High_UnNormal':
+                MLP_Obj.Set_High_UnNormal()
+            elif self.classifier == 'MLP_Low_UnNormal':
+                MLP_Obj.Set_Low_UnNormal()
+            test_accuracy, train_accuracy, F1_score_binary, F1_score_micro, test_auc, train_auc, precision, recall, cm = MLP_Obj.Test()
+            return test_accuracy, train_accuracy, F1_score_binary, F1_score_micro, test_auc, train_auc, precision, recall, cm
+
+        elif self.classifier in sklearn_based_classifier:
+            classifier = self.GetClassifier()
+            classifier.fit(self.X_train, self.y_train)
+            y_test_pred_proba = classifier.predict_proba(self.X_test)[:, 1]
+            y_train_pred_proba = classifier.predict_proba(self.X_train)[:, 1]
+            y_test_pred = classifier.predict(self.X_test)
+            y_train_pred = classifier.predict(self.X_train)
+            test_accuracy = accuracy_score(y_true=self.y_test, y_pred=y_test_pred)
+            train_accuracy = accuracy_score(y_true=self.y_train, y_pred=y_train_pred)
+            test_auc_score = roc_auc_score(y_true=self.y_test, y_score=y_test_pred_proba)
+            train_auc_score = roc_auc_score(y_true=self.y_train, y_score=y_train_pred_proba)
+            F1_score_binary = f1_score(y_true=self.y_test, y_pred=y_test_pred, average='binary')
+            F1_score_micro = f1_score(y_true=self.y_test, y_pred=y_test_pred, average='micro')
+            report = classification_report(self.y_test, y_test_pred, zero_division="warn")
+            cm = confusion_matrix(self.y_test, y_test_pred)
+            TP = cm[1][1]
+            TN = cm[0][0]
+            FP = cm[0][1]
+            FN = cm[1][0]
+            if TP + FP == 0:
+                precision = math.nan
+            else:
+                precision = TP / (TP + FP)
+            recall = TP / (TP + FN)
+            print(f"{self.classifier}_{self.model}_{self.in_round}")
+            print(report)
+            print(f'auc: {test_auc_score}')
+            print(f'f1 binary: {F1_score_binary}, f1 micro: {F1_score_micro}')
+
+            return test_accuracy, train_accuracy, F1_score_binary, F1_score_micro, test_auc_score, train_auc_score, precision, recall, cm
