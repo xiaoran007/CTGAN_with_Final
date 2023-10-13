@@ -91,7 +91,7 @@ class DataGenerator:
         self.y_train_SMOTE = y_train_SMOTE
 
     def Set_CTGAN(self):
-        self.CTGAN = CTGAN(batch_size=500, epochs=100, cuda=True, verbose=False)
+        self.CTGAN = CTGAN(batch_size=500, epochs=100, cuda=True, verbose=True)
         X_train_fraud = self.X_train[self.y_train == 1]
         self.CTGAN.fit(X_train_fraud)
 

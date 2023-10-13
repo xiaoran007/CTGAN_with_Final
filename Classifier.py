@@ -46,7 +46,7 @@ sklearn_based_classifier = ['GaussianNB',
                             'AdaBoostClassifier',
                             'LogisticRegression']
 
-
+'''
 Classifier_dict = {'GaussianNB': GaussianNB(),
                    'KNeighborsClassifier': KNeighborsClassifier(n_jobs=-1),
                    'RandomForestClassifier': RandomForestClassifier(n_jobs=-1),
@@ -70,7 +70,7 @@ pipeline_hist = Pipeline([('HistGradientBoostingClassifier', HistGradientBoostin
 pipeline_gradB = Pipeline([('GradientBoostingClassifier', GradientBoostingClassifier())])
 pipeline_adaB = Pipeline([('AdaBoostClassifier', AdaBoostClassifier())])
 pipeline_lr = Pipeline([('LogisticRegression', LogisticRegression(n_jobs=-1))])
-
+'''
 
 class Classifier:
     def __init__(self, X_train, y_train, X_val, y_val, X_test, y_test, classifier, model, epoch=30, batch_size=8192):
@@ -89,7 +89,40 @@ class Classifier:
         if self.classifier in tf_based_classifier:
             pass
         elif self.classifier in sklearn_based_classifier:
-            return Classifier_dict[self.classifier]
+            if self.classifier == 'GaussianNB':
+                return GaussianNB()
+
+            elif self.classifier == 'KNeighborsClassifier':
+                return KNeighborsClassifier(n_jobs=-1)
+
+            elif self.classifier == 'RandomForestClassifier':
+                return RandomForestClassifier(n_jobs=-1)
+
+            elif self.classifier == 'DecisionTreeClassifier':
+                return DecisionTreeClassifier()
+
+            elif self.classifier == 'XGBClassifier':
+                return XGBClassifier(tree_method="hist", device="cuda")
+
+            elif self.classifier == 'LGBMClassifier':
+                return LGBMClassifier(objective='binary')
+
+            elif self.classifier == 'CatBoostClassifier':
+                return CatBoostClassifier(task_type="GPU", verbose=True, iterations=100)
+
+            elif self.classifier == 'HistGradientBoostingClassifier':
+                return HistGradientBoostingClassifier(verbose=1)
+
+            elif self.classifier == 'GradientBoostingClassifier':
+                return GradientBoostingClassifier()
+
+            elif self.classifier == 'AdaBoostClassifier':
+                return AdaBoostClassifier()
+
+            elif self.classifier == 'LogisticRegression':
+                return LogisticRegression(n_jobs=-1)
+
+            # return Classifier_dict[self.classifier]
         else:
             print("Err.")
 
@@ -146,3 +179,6 @@ class Classifier:
 
             return (test_accuracy_array, train_accuracy_array, F1_score_binary_array, F1_score_micro_array,
                     test_auc_array, train_auc_array, precision_array, recall_array, cm_list)
+
+    def TestSingle(self):
+        pass
