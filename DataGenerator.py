@@ -75,7 +75,7 @@ class DataGenerator:
 
         lr = 0.0002
         epochs = 150
-        batch_size = 128
+        batch_size = 512
 
         X_real, y_real = GANs_two_class_real_data(self.X_train, self.y_train)
 

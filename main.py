@@ -36,7 +36,13 @@ Datasets_list = ['Africa',
                  'Yeast',
                  'YeastUn']
 
-X_train, y_train, X_val, y_val, X_test, y_test = DatasetsLoader.load_Africa_data()
+Model_list = ['Normal',
+              'SMOTE',
+              'GAN',
+              'SMOTE-GAN',
+              'CTGAN']
+
+X_train, y_train, X_val, y_val, X_test, y_test = DatasetsLoader.load_PredictTerm_data()
 dataobj = DataGenerator.DataGenerator(X_train, y_train, X_val, y_val, X_test, y_test)
 dataobj.Set_SMOTE()
 dataobj.Set_GAN()
