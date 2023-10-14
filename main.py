@@ -1,12 +1,16 @@
 import Classifier
 import DatasetsLoader
 import DataGenerator
+import Evaluator
+import pandas as pd
+import os
+import time
 
 
 Classifier_list = ['MLP_High_Normal',
                    'MLP_Low_Normal',
                    'MLP_High_UnNormal',
-                   'MLP_Low_UnNormal'
+                   'MLP_Low_UnNormal',
                    'GaussianNB',
                    'KNeighborsClassifier',
                    'RandomForestClassifier',
@@ -18,6 +22,23 @@ Classifier_list = ['MLP_High_Normal',
                    'GradientBoostingClassifier',
                    'AdaBoostClassifier',
                    'LogisticRegression']
+
+tf_based_classifier = ['MLP_High_Normal',
+                       'MLP_Low_Normal',
+                       'MLP_High_UnNormal',
+                       'MLP_Low_UnNormal']
+
+sklearn_based_classifier = ['GaussianNB',
+                            'KNeighborsClassifier',
+                            'RandomForestClassifier',
+                            'DecisionTreeClassifier',
+                            'XGBClassifier',
+                            'LGBMClassifier',
+                            'CatBoostClassifier',
+                            'HistGradientBoostingClassifier',
+                            'GradientBoostingClassifier',
+                            'AdaBoostClassifier',
+                            'LogisticRegression']
 
 Datasets_list = ['Africa',
                  'BankNote',
@@ -42,12 +63,37 @@ Model_list = ['Normal',
               'SMOTE-GAN',
               'CTGAN']
 
-X_train, y_train, X_val, y_val, X_test, y_test = DatasetsLoader.load_PredictTerm_data()
-dataobj = DataGenerator.DataGenerator(X_train, y_train, X_val, y_val, X_test, y_test)
-dataobj.Set_SMOTE()
-dataobj.Set_GAN()
-X_train, y_train, X_val, y_val, X_test, y_test = dataobj.GenerateSGANData()
-classifier_obj = Classifier.Classifier(X_train, y_train, X_val, y_val, X_test, y_test, classifier='MLP_Low_Normal', model='SMOTE-GAN', in_round=1, epoch=30, batch_size=512)
-test_accuracy_array, train_accuracy_array, F1_score_binary_array, F1_score_micro_array, test_auc_array, train_auc_array, \
-    precision_array, recall_array, cm_list = classifier_obj.TestSingle()
-print(test_auc_array)
+
+def SaveCSV(dataframe, classifier, dataset):
+    try:
+        if not os.path.exists(f'results/{classifier}'):
+            os.makedirs(f'results/{classifier}')
+        dataframe.to_csv(f'results/{classifier}/{dataset}.csv', index=False)
+        return f'Time {time.asctime()} Write results/{classifier}/{dataset} success\n'
+    except IOError as e:
+        return f'Time {time.asctime()} Err. {e} results/{classifier}/{dataset}\n'
+
+
+def main(classifier_list, datasets_list):
+    with open("log.log", 'a') as log:
+        status = f'\n------\nTime {time.asctime()} Classifier:{len(classifier_list)} Datasets:{len(datasets_list)} Main start\n'
+        log.write(status)
+    for classifier in classifier_list:
+        for dataset in datasets_list:
+            try:
+                eva_obj = Evaluator.Evaluator(dataset_name=dataset, classifier_name=classifier, rounds=30)
+                result_df = eva_obj.evaluate()
+                status = SaveCSV(dataframe=result_df, classifier=classifier, dataset=dataset)
+                with open("log.log", 'a') as log:
+                    log.write(status)
+            except Exception as e:
+                with open("log.log", 'a') as log:
+                    status = f'Time {time.asctime()} Err. {e} in {classifier}-{dataset}\n'
+                    log.write(status)
+
+
+clist_test = ['RandomForestClassifier']
+dlist_test = ['Africa']
+
+main(classifier_list=clist_test, datasets_list=Datasets_list)
+

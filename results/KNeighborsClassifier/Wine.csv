@@ -1,0 +1,7 @@
+Normal_test_accuracy,Normal_train_accuracy,Normal_f1_score_binary,Normal_f1_score_micro,Normal_test_auc_score,Normal_train_auc_score,Normal_precision,Normal_recall,Normal_cm,SMOTE_test_accuracy,SMOTE_train_accuracy,SMOTE_f1_score_binary,SMOTE_f1_score_micro,SMOTE_test_auc_score,SMOTE_train_auc_score,SMOTE_precision,SMOTE_recall,SMOTE_cm,GAN_test_accuracy,GAN_train_accuracy,GAN_f1_score_binary,GAN_f1_score_micro,GAN_test_auc_score,GAN_train_auc_score,GAN_precision,GAN_recall,GAN_cm,SGAN_test_accuracy,SGAN_train_accuracy,SGAN_f1_score_binary,SGAN_f1_score_micro,SGAN_test_auc_score,SGAN_train_auc_score,SGAN_precision,SGAN_recall,SGAN_cm,CTGAN_test_accuracy,CTGAN_train_accuracy,CTGAN_f1_score_binary,CTGAN_f1_score_micro,CTGAN_test_auc_score,CTGAN_train_auc_score,CTGAN_precision,CTGAN_recall,CTGAN_cm
+1.0,0.9838709677419355,1.0,1.0,1.0,0.9997061416397297,1.0,1.0,"[[24  0]
+ [ 0 12]]",1.0,0.9819277108433735,1.0,1.0,1.0,1.0,1.0,1.0,"[[24  0]
+ [ 0 12]]",1.0,0.9879518072289156,1.0,1.0,1.0,0.9997822615764261,1.0,1.0,"[[24  0]
+ [ 0 12]]",1.0,0.9879518072289156,1.0,1.0,1.0,0.9998548410509508,1.0,1.0,"[[24  0]
+ [ 0 12]]",1.0,0.9759036144578314,1.0,1.0,1.0,0.9968065031209175,1.0,1.0,"[[24  0]
+ [ 0 12]]"

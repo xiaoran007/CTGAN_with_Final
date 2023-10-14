@@ -195,7 +195,7 @@ class Dataset:
         dataset = pd.read_csv("Datasets/Loan Prediction Problem Dataset/train_dropna.csv", delimiter=',')
         X = dataset.drop(['Loan_ID', 'Loan_Status'], axis=1)
         y = dataset['Loan_Status']
-        y = y.replace({'N': 0, 'Y': 1})
+        y = y.replace({'N': 1, 'Y': 0})
         y.astype('int')
         le = LabelEncoder()
         X['Gender'] = le.fit_transform(X['Gender'])
@@ -493,7 +493,7 @@ def load_LoanPrediction_data():
     dataset = pd.read_csv("Datasets/Loan Prediction Problem Dataset/train_dropna.csv", delimiter=',')
     X = dataset.drop(['Loan_ID', 'Loan_Status'], axis=1)
     y = dataset['Loan_Status']
-    y = y.replace({'N': 0, 'Y': 1})
+    y = y.replace({'N': 1, 'Y': 0})
     y.astype('int')
     le = LabelEncoder()
     X['Gender'] = le.fit_transform(X['Gender'])
@@ -661,14 +661,17 @@ def load_YeastUn_data():
 
 def Check(dataset_name):
     try:
-        dataset = Dataset(dataset_name)
-        X, y = dataset.GetDataset()
+        # dataset = Dataset(dataset_name)
+        # X, y = dataset.GetDataset()
         # print(X)
         # print(y)
         # print(X_train)
         # rint(y_train)
         # rint(X_test)
         # rint(y_test)
+        X_train, y_train, X_val, y_val, X_test, y_test = preprocess(dataset_name)
+        num_samples = np.count_nonzero(y_train == 0) - np.count_nonzero(y_train == 1)
+        print(num_samples)
         print('Ok')
     except:
         print("Err")

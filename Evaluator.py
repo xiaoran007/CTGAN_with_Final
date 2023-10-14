@@ -125,7 +125,10 @@ class Evaluator:
                     'CTGAN_recall': [CTGAN_recall],
                     'CTGAN_cm': [CTGAN_cm],
                     }
+            result = pd.DataFrame(data)
+            dataframe = pd.concat([dataframe, result], ignore_index=True)
 
+        return dataframe
 
     @staticmethod
     def CreatDataframe():
