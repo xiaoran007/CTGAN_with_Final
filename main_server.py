@@ -84,7 +84,7 @@ def main(classifier_list, datasets_list):
             log.write(status)
         for dataset in datasets_list:
             try:
-                eva_obj = Evaluator.Evaluator(dataset_name=dataset, classifier_name=classifier, rounds=1)
+                eva_obj = Evaluator.Evaluator(dataset_name=dataset, classifier_name=classifier, rounds=30)
                 result_df = eva_obj.evaluate()
                 status = SaveCSV(dataframe=result_df, classifier=classifier, dataset=dataset)
                 with open("log_server.log", 'a') as log:
@@ -95,8 +95,8 @@ def main(classifier_list, datasets_list):
                     log.write(status)
 
 
-clist_test = ['MLP_High_Normal']
+clist_test = ['DecisionTreeClassifier', 'XGBClassifier']
 dlist_test = ['Africa']
 
-main(classifier_list=Classifier_list, datasets_list=dlist_test)
+main(classifier_list=clist_test, datasets_list=Datasets_list)
 

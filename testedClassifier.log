@@ -1,0 +1,6 @@
+tested:
+MLP_High_Normal
+RandomForestClassifier
+
+testing:
+'GaussianNB', 'KNeighborsClassifier', 'DecisionTreeClassifier', 'XGBClassifier'
