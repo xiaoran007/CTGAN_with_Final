@@ -80,7 +80,7 @@ def main(classifier_list, datasets_list):
         log.write(status)
     for classifier in classifier_list:
         with open("log.log", 'a') as log:
-            status = f'\n------\nTime {time.asctime()} Classifier:{classifier} start\n'
+            status = f'Time {time.asctime()} Classifier:{classifier} start\n'
             log.write(status)
         for dataset in datasets_list:
             try:
