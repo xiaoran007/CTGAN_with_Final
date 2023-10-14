@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
+  <component name="PublishConfigData" serverName="winserver" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
       <paths name="winserver">
         <serverdata>
           <mappings>
-            <mapping local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/D:/FURP/CTGAN_with_Final" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath path="/D:/FURP/CTGAN_with_Final/catboost_info/time_left.tsv" />
+            <excludedPath path="/D:/FURP/CTGAN_with_Final/catboost_info/learn_error.tsv" />
+            <excludedPath path="/D:/FURP/CTGAN_with_Final/catboost_info/catboost_training.json" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>

@@ -1,0 +1,18 @@
+
+------
+Time Sat Oct 14 16:38:25 2023 Classifier:15 Datasets:1 Main start
+Time Sat Oct 14 16:38:54 2023 Write results/MLP_High_Normal/Africa success
+Time Sat Oct 14 16:39:34 2023 Write results/MLP_Low_Normal/Africa success
+Time Sat Oct 14 16:39:52 2023 Write results/MLP_High_UnNormal/Africa success
+Time Sat Oct 14 16:40:12 2023 Write results/MLP_Low_UnNormal/Africa success
+Time Sat Oct 14 16:40:22 2023 Write results/GaussianNB/Africa success
+Time Sat Oct 14 16:40:45 2023 Write results/KNeighborsClassifier/Africa success
+Time Sat Oct 14 16:40:59 2023 Write results/RandomForestClassifier/Africa success
+Time Sat Oct 14 16:41:09 2023 Write results/DecisionTreeClassifier/Africa success
+Time Sat Oct 14 16:41:19 2023 Write results/XGBClassifier/Africa success
+Time Sat Oct 14 16:41:30 2023 Write results/LGBMClassifier/Africa success
+Time Sat Oct 14 16:41:44 2023 Write results/CatBoostClassifier/Africa success
+Time Sat Oct 14 16:41:56 2023 Write results/HistGradientBoostingClassifier/Africa success
+Time Sat Oct 14 16:42:09 2023 Write results/GradientBoostingClassifier/Africa success
+Time Sat Oct 14 16:42:20 2023 Write results/AdaBoostClassifier/Africa success
+Time Sat Oct 14 16:42:33 2023 Write results/LogisticRegression/Africa success
