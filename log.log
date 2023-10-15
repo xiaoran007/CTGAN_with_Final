@@ -102,3 +102,49 @@ Time Sat Oct 14 18:03:45 2023 Write results/MLP_High_Normal/Wine success
 Time Sat Oct 14 18:16:03 2023 Write results/MLP_High_Normal/WineRed success
 Time Sat Oct 14 18:28:09 2023 Write results/MLP_High_Normal/Yeast success
 Time Sat Oct 14 18:40:17 2023 Write results/MLP_High_Normal/YeastUn success
+
+------
+Time Sat Oct 14 18:52:32 2023 Classifier:2 Datasets:16 Main start
+Time Sat Oct 14 18:52:32 2023 Classifier:GaussianNB start
+Time Sat Oct 14 18:57:46 2023 Write results/GaussianNB/Africa success
+
+------
+Time Sat Oct 14 19:01:44 2023 Classifier:2 Datasets:16 Main start
+Time Sat Oct 14 19:01:44 2023 Classifier:GaussianNB start
+Time Sat Oct 14 19:06:54 2023 Write results/GaussianNB/Africa success
+Time Sat Oct 14 19:11:55 2023 Write results/GaussianNB/BankNote success
+Time Sat Oct 14 19:18:04 2023 Write results/GaussianNB/CreditApproval success
+Time Sat Oct 14 19:23:17 2023 Write results/GaussianNB/CreditRisk success
+Time Sat Oct 14 20:28:03 2023 Write results/GaussianNB/CreditCard success
+Time Sat Oct 14 20:32:22 2023 Write results/GaussianNB/Ecoli success
+Time Sat Oct 14 20:37:42 2023 Write results/GaussianNB/FakeBills success
+Time Sat Oct 14 20:42:47 2023 Write results/GaussianNB/LoanPrediction success
+Time Sat Oct 14 20:47:43 2023 Write results/GaussianNB/PageBlock success
+Time Sat Oct 14 20:52:30 2023 Write results/GaussianNB/PageBlockDel success
+Time Sat Oct 14 21:43:32 2023 Write results/GaussianNB/PredictTerm success
+Time Sat Oct 14 21:50:20 2023 Write results/GaussianNB/SouthGermanCredit success
+Time Sat Oct 14 21:55:53 2023 Write results/GaussianNB/Wine success
+Time Sat Oct 14 22:00:48 2023 Write results/GaussianNB/WineRed success
+Time Sat Oct 14 22:05:27 2023 Write results/GaussianNB/Yeast success
+Time Sat Oct 14 22:10:05 2023 Write results/GaussianNB/YeastUn success
+Time Sat Oct 14 22:10:05 2023 Classifier:KNeighborsClassifier start
+Time Sat Oct 14 22:15:32 2023 Write results/KNeighborsClassifier/Africa success
+Time Sat Oct 14 22:20:42 2023 Write results/KNeighborsClassifier/BankNote success
+Time Sat Oct 14 22:26:56 2023 Write results/KNeighborsClassifier/CreditApproval success
+Time Sat Oct 14 22:32:27 2023 Write results/KNeighborsClassifier/CreditRisk success
+Time Sun Oct 15 02:53:15 2023 Write results/KNeighborsClassifier/CreditCard success
+Time Sun Oct 15 02:57:41 2023 Write results/KNeighborsClassifier/Ecoli success
+Time Sun Oct 15 03:03:16 2023 Write results/KNeighborsClassifier/FakeBills success
+Time Sun Oct 15 03:08:29 2023 Write results/KNeighborsClassifier/LoanPrediction success
+Time Sun Oct 15 03:14:32 2023 Write results/KNeighborsClassifier/PageBlock success
+Time Sun Oct 15 03:19:31 2023 Write results/KNeighborsClassifier/PageBlockDel success
+Time Sun Oct 15 12:29:49 2023 Write results/KNeighborsClassifier/PredictTerm success
+Time Sun Oct 15 12:37:08 2023 Write results/KNeighborsClassifier/SouthGermanCredit success
+Time Sun Oct 15 12:42:54 2023 Write results/KNeighborsClassifier/Wine success
+Time Sun Oct 15 12:48:16 2023 Write results/KNeighborsClassifier/WineRed success
+Time Sun Oct 15 12:53:10 2023 Write results/KNeighborsClassifier/Yeast success
+Time Sun Oct 15 12:58:19 2023 Write results/KNeighborsClassifier/YeastUn success
+
+------
+Time Sun Oct 15 13:13:13 2023 Classifier:3 Datasets:16 Main start
+Time Sun Oct 15 13:13:13 2023 Classifier:LGBMClassifier start

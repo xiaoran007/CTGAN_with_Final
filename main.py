@@ -95,7 +95,7 @@ def main(classifier_list, datasets_list):
                     log.write(status)
 
 
-clist_test = ['GaussianNB', 'KNeighborsClassifier']
+clist_test = ['LGBMClassifier', 'CatBoostClassifier', 'HistGradientBoostingClassifier']
 dlist_test = ['Africa']
 
 main(classifier_list=clist_test, datasets_list=Datasets_list)

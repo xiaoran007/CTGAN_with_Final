@@ -95,7 +95,7 @@ def main(classifier_list, datasets_list):
                     log.write(status)
 
 
-clist_test = ['DecisionTreeClassifier', 'XGBClassifier']
+clist_test = ['MLP_Low_Normal', 'MLP_High_UnNormal', 'MLP_Low_UnNormal']
 dlist_test = ['Africa']
 
 main(classifier_list=clist_test, datasets_list=Datasets_list)

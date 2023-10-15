@@ -1,6 +1,33 @@
+Classifier_list = ['MLP_High_Normal',
+                   'MLP_Low_Normal',
+                   'MLP_High_UnNormal',
+                   'MLP_Low_UnNormal',
+                   'GaussianNB',
+                   'KNeighborsClassifier',
+                   'RandomForestClassifier',
+                   'DecisionTreeClassifier',
+                   'XGBClassifier',
+                   'LGBMClassifier',
+                   'CatBoostClassifier',
+                   'HistGradientBoostingClassifier',
+                   'GradientBoostingClassifier',
+                   'AdaBoostClassifier',
+                   'LogisticRegression']
+
 tested:
 MLP_High_Normal
+'GaussianNB'
+'KNeighborsClassifier'
 RandomForestClassifier
+'DecisionTreeClassifier',
+'XGBClassifier'
 
 testing:
-'GaussianNB', 'KNeighborsClassifier', 'DecisionTreeClassifier', 'XGBClassifier'
+workstation
+'LGBMClassifier',
+'CatBoostClassifier',
+'HistGradientBoostingClassifier'
+server
+'MLP_Low_Normal',
+'MLP_High_UnNormal',
+'MLP_Low_UnNormal'

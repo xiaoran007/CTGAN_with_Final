@@ -43,3 +43,40 @@ Time Sat Oct 14 18:49:09 2023 Classifier:2 Datasets:16 Main start
 
 ------
 Time Sat Oct 14 18:49:09 2023 Classifier:DecisionTreeClassifier start
+
+------
+Time Sat Oct 14 18:51:07 2023 Classifier:2 Datasets:16 Main start
+Time Sat Oct 14 18:51:07 2023 Classifier:DecisionTreeClassifier start
+Time Sat Oct 14 18:55:50 2023 Write results/DecisionTreeClassifier/Africa success
+Time Sat Oct 14 19:00:32 2023 Write results/DecisionTreeClassifier/BankNote success
+Time Sat Oct 14 19:06:24 2023 Write results/DecisionTreeClassifier/CreditApproval success
+Time Sat Oct 14 19:11:17 2023 Write results/DecisionTreeClassifier/CreditRisk success
+Time Sat Oct 14 20:27:18 2023 Write results/DecisionTreeClassifier/CreditCard success
+Time Sat Oct 14 20:31:26 2023 Write results/DecisionTreeClassifier/Ecoli success
+Time Sat Oct 14 20:36:37 2023 Write results/DecisionTreeClassifier/FakeBills success
+Time Sat Oct 14 20:41:31 2023 Write results/DecisionTreeClassifier/LoanPrediction success
+Time Sat Oct 14 20:46:11 2023 Write results/DecisionTreeClassifier/PageBlock success
+Time Sat Oct 14 20:50:46 2023 Write results/DecisionTreeClassifier/PageBlockDel success
+Time Sat Oct 14 22:00:08 2023 Write results/DecisionTreeClassifier/PredictTerm success
+Time Sat Oct 14 22:06:40 2023 Write results/DecisionTreeClassifier/SouthGermanCredit success
+Time Sat Oct 14 22:11:54 2023 Write results/DecisionTreeClassifier/Wine success
+Time Sat Oct 14 22:16:26 2023 Write results/DecisionTreeClassifier/WineRed success
+Time Sat Oct 14 22:20:47 2023 Write results/DecisionTreeClassifier/Yeast success
+Time Sat Oct 14 22:25:02 2023 Write results/DecisionTreeClassifier/YeastUn success
+Time Sat Oct 14 22:25:02 2023 Classifier:XGBClassifier start
+Time Sat Oct 14 22:30:30 2023 Write results/XGBClassifier/Africa success
+Time Sat Oct 14 22:36:02 2023 Write results/XGBClassifier/BankNote success
+Time Sat Oct 14 22:42:59 2023 Write results/XGBClassifier/CreditApproval success
+Time Sat Oct 14 22:48:47 2023 Write results/XGBClassifier/CreditRisk success
+Time Sun Oct 15 00:07:03 2023 Write results/XGBClassifier/CreditCard success
+Time Sun Oct 15 00:11:48 2023 Write results/XGBClassifier/Ecoli success
+Time Sun Oct 15 00:17:45 2023 Write results/XGBClassifier/FakeBills success
+Time Sun Oct 15 00:23:43 2023 Write results/XGBClassifier/LoanPrediction success
+Time Sun Oct 15 00:29:02 2023 Write results/XGBClassifier/PageBlock success
+Time Sun Oct 15 00:34:14 2023 Write results/XGBClassifier/PageBlockDel success
+Time Sun Oct 15 01:49:52 2023 Write results/XGBClassifier/PredictTerm success
+Time Sun Oct 15 01:57:34 2023 Write results/XGBClassifier/SouthGermanCredit success
+Time Sun Oct 15 02:03:14 2023 Write results/XGBClassifier/Wine success
+Time Sun Oct 15 02:08:32 2023 Write results/XGBClassifier/WineRed success
+Time Sun Oct 15 02:13:40 2023 Write results/XGBClassifier/Yeast success
+Time Sun Oct 15 02:18:49 2023 Write results/XGBClassifier/YeastUn success
