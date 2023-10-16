@@ -148,3 +148,90 @@ Time Sun Oct 15 12:58:19 2023 Write results/KNeighborsClassifier/YeastUn success
 ------
 Time Sun Oct 15 13:13:13 2023 Classifier:3 Datasets:16 Main start
 Time Sun Oct 15 13:13:13 2023 Classifier:LGBMClassifier start
+Time Sun Oct 15 13:18:36 2023 Write results/LGBMClassifier/Africa success
+Time Sun Oct 15 13:23:41 2023 Write results/LGBMClassifier/BankNote success
+Time Sun Oct 15 13:29:52 2023 Write results/LGBMClassifier/CreditApproval success
+Time Sun Oct 15 13:35:18 2023 Write results/LGBMClassifier/CreditRisk success
+Time Sun Oct 15 14:42:02 2023 Write results/LGBMClassifier/CreditCard success
+Time Sun Oct 15 14:46:29 2023 Write results/LGBMClassifier/Ecoli success
+Time Sun Oct 15 14:52:00 2023 Write results/LGBMClassifier/FakeBills success
+Time Sun Oct 15 14:57:13 2023 Write results/LGBMClassifier/LoanPrediction success
+Time Sun Oct 15 15:02:28 2023 Write results/LGBMClassifier/PageBlock success
+Time Sun Oct 15 15:07:24 2023 Write results/LGBMClassifier/PageBlockDel success
+Time Sun Oct 15 16:00:16 2023 Write results/LGBMClassifier/PredictTerm success
+Time Sun Oct 15 16:07:05 2023 Write results/LGBMClassifier/SouthGermanCredit success
+Time Sun Oct 15 16:12:34 2023 Write results/LGBMClassifier/Wine success
+Time Sun Oct 15 16:17:39 2023 Write results/LGBMClassifier/WineRed success
+Time Sun Oct 15 16:22:25 2023 Write results/LGBMClassifier/Yeast success
+Time Sun Oct 15 16:27:15 2023 Write results/LGBMClassifier/YeastUn success
+Time Sun Oct 15 16:27:15 2023 Classifier:CatBoostClassifier start
+Time Sun Oct 15 16:36:55 2023 Write results/CatBoostClassifier/Africa success
+Time Sun Oct 15 16:46:13 2023 Write results/CatBoostClassifier/BankNote success
+Time Sun Oct 15 16:56:48 2023 Write results/CatBoostClassifier/CreditApproval success
+Time Sun Oct 15 17:06:33 2023 Write results/CatBoostClassifier/CreditRisk success
+Time Sun Oct 15 18:19:42 2023 Write results/CatBoostClassifier/CreditCard success
+Time Sun Oct 15 18:28:28 2023 Write results/CatBoostClassifier/Ecoli success
+Time Sun Oct 15 18:38:14 2023 Write results/CatBoostClassifier/FakeBills success
+Time Sun Oct 15 18:48:02 2023 Write results/CatBoostClassifier/LoanPrediction success
+Time Sun Oct 15 18:58:29 2023 Write results/CatBoostClassifier/PageBlock success
+Time Sun Oct 15 19:08:23 2023 Write results/CatBoostClassifier/PageBlockDel success
+Time Sun Oct 15 20:06:47 2023 Write results/CatBoostClassifier/PredictTerm success
+Time Sun Oct 15 20:18:21 2023 Write results/CatBoostClassifier/SouthGermanCredit success
+Time Sun Oct 15 20:27:39 2023 Write results/CatBoostClassifier/Wine success
+Time Sun Oct 15 20:36:27 2023 Write results/CatBoostClassifier/WineRed success
+Time Sun Oct 15 20:45:01 2023 Write results/CatBoostClassifier/Yeast success
+Time Sun Oct 15 20:53:40 2023 Write results/CatBoostClassifier/YeastUn success
+Time Sun Oct 15 20:53:40 2023 Classifier:HistGradientBoostingClassifier start
+Time Sun Oct 15 21:00:51 2023 Write results/HistGradientBoostingClassifier/Africa success
+Time Sun Oct 15 21:07:06 2023 Write results/HistGradientBoostingClassifier/BankNote success
+Time Sun Oct 15 21:14:21 2023 Write results/HistGradientBoostingClassifier/CreditApproval success
+Time Sun Oct 15 21:21:24 2023 Write results/HistGradientBoostingClassifier/CreditRisk success
+Time Sun Oct 15 22:30:27 2023 Write results/HistGradientBoostingClassifier/CreditCard success
+Time Sun Oct 15 22:35:40 2023 Write results/HistGradientBoostingClassifier/Ecoli success
+Time Sun Oct 15 22:42:28 2023 Write results/HistGradientBoostingClassifier/FakeBills success
+Time Sun Oct 15 22:48:36 2023 Write results/HistGradientBoostingClassifier/LoanPrediction success
+Time Sun Oct 15 22:55:23 2023 Write results/HistGradientBoostingClassifier/PageBlock success
+Time Sun Oct 15 23:01:24 2023 Write results/HistGradientBoostingClassifier/PageBlockDel success
+Time Sun Oct 15 23:57:42 2023 Write results/HistGradientBoostingClassifier/PredictTerm success
+Time Mon Oct 16 00:06:19 2023 Write results/HistGradientBoostingClassifier/SouthGermanCredit success
+Time Mon Oct 16 00:12:13 2023 Write results/HistGradientBoostingClassifier/Wine success
+Time Mon Oct 16 00:18:42 2023 Write results/HistGradientBoostingClassifier/WineRed success
+Time Mon Oct 16 00:24:35 2023 Write results/HistGradientBoostingClassifier/Yeast success
+Time Mon Oct 16 00:30:54 2023 Write results/HistGradientBoostingClassifier/YeastUn success
+
+------
+Time Mon Oct 16 01:42:39 2023 Classifier:2 Datasets:16 Main start
+Time Mon Oct 16 01:42:39 2023 Classifier:GradientBoostingClassifier start
+Time Mon Oct 16 01:48:27 2023 Write results/GradientBoostingClassifier/Africa success
+Time Mon Oct 16 01:53:45 2023 Write results/GradientBoostingClassifier/BankNote success
+Time Mon Oct 16 02:00:07 2023 Write results/GradientBoostingClassifier/CreditApproval success
+Time Mon Oct 16 02:05:51 2023 Write results/GradientBoostingClassifier/CreditRisk success
+Time Mon Oct 16 03:45:27 2023 Write results/GradientBoostingClassifier/CreditCard success
+Time Mon Oct 16 03:50:00 2023 Write results/GradientBoostingClassifier/Ecoli success
+Time Mon Oct 16 03:55:50 2023 Write results/GradientBoostingClassifier/FakeBills success
+Time Mon Oct 16 04:01:10 2023 Write results/GradientBoostingClassifier/LoanPrediction success
+Time Mon Oct 16 04:10:03 2023 Write results/GradientBoostingClassifier/PageBlock success
+Time Mon Oct 16 04:15:16 2023 Write results/GradientBoostingClassifier/PageBlockDel success
+Time Mon Oct 16 05:40:09 2023 Write results/GradientBoostingClassifier/PredictTerm success
+Time Mon Oct 16 05:47:30 2023 Write results/GradientBoostingClassifier/SouthGermanCredit success
+Time Mon Oct 16 05:53:17 2023 Write results/GradientBoostingClassifier/Wine success
+Time Mon Oct 16 05:58:48 2023 Write results/GradientBoostingClassifier/WineRed success
+Time Mon Oct 16 06:03:46 2023 Write results/GradientBoostingClassifier/Yeast success
+Time Mon Oct 16 06:09:10 2023 Write results/GradientBoostingClassifier/YeastUn success
+Time Mon Oct 16 06:09:10 2023 Classifier:AdaBoostClassifier start
+Time Mon Oct 16 06:14:46 2023 Write results/AdaBoostClassifier/Africa success
+Time Mon Oct 16 06:19:57 2023 Write results/AdaBoostClassifier/BankNote success
+Time Mon Oct 16 06:26:20 2023 Write results/AdaBoostClassifier/CreditApproval success
+Time Mon Oct 16 06:31:58 2023 Write results/AdaBoostClassifier/CreditRisk success
+Time Mon Oct 16 07:46:25 2023 Write results/AdaBoostClassifier/CreditCard success
+Time Mon Oct 16 07:51:02 2023 Write results/AdaBoostClassifier/Ecoli success
+Time Mon Oct 16 07:56:40 2023 Write results/AdaBoostClassifier/FakeBills success
+Time Mon Oct 16 08:02:02 2023 Write results/AdaBoostClassifier/LoanPrediction success
+Time Mon Oct 16 08:08:26 2023 Write results/AdaBoostClassifier/PageBlock success
+Time Mon Oct 16 08:13:38 2023 Write results/AdaBoostClassifier/PageBlockDel success
+Time Mon Oct 16 09:14:38 2023 Write results/AdaBoostClassifier/PredictTerm success
+Time Mon Oct 16 09:21:48 2023 Write results/AdaBoostClassifier/SouthGermanCredit success
+Time Mon Oct 16 09:27:37 2023 Write results/AdaBoostClassifier/Wine success
+Time Mon Oct 16 09:32:56 2023 Write results/AdaBoostClassifier/WineRed success
+Time Mon Oct 16 09:37:54 2023 Write results/AdaBoostClassifier/Yeast success
+Time Mon Oct 16 09:43:06 2023 Write results/AdaBoostClassifier/YeastUn success

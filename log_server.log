@@ -80,3 +80,57 @@ Time Sun Oct 15 02:03:14 2023 Write results/XGBClassifier/Wine success
 Time Sun Oct 15 02:08:32 2023 Write results/XGBClassifier/WineRed success
 Time Sun Oct 15 02:13:40 2023 Write results/XGBClassifier/Yeast success
 Time Sun Oct 15 02:18:49 2023 Write results/XGBClassifier/YeastUn success
+
+------
+Time Sun Oct 15 10:37:49 2023 Classifier:3 Datasets:16 Main start
+Time Sun Oct 15 10:37:49 2023 Classifier:MLP_Low_Normal start
+Time Sun Oct 15 10:50:03 2023 Write results/MLP_Low_Normal/Africa success
+Time Sun Oct 15 11:02:22 2023 Write results/MLP_Low_Normal/BankNote success
+Time Sun Oct 15 11:15:28 2023 Write results/MLP_Low_Normal/CreditApproval success
+Time Sun Oct 15 11:27:49 2023 Write results/MLP_Low_Normal/CreditRisk success
+Time Sun Oct 15 12:55:10 2023 Write results/MLP_Low_Normal/CreditCard success
+Time Sun Oct 15 13:06:41 2023 Write results/MLP_Low_Normal/Ecoli success
+Time Sun Oct 15 13:19:16 2023 Write results/MLP_Low_Normal/FakeBills success
+Time Sun Oct 15 13:31:27 2023 Write results/MLP_Low_Normal/LoanPrediction success
+Time Sun Oct 15 13:43:37 2023 Write results/MLP_Low_Normal/PageBlock success
+Time Sun Oct 15 13:55:33 2023 Write results/MLP_Low_Normal/PageBlockDel success
+Time Sun Oct 15 15:21:01 2023 Write results/MLP_Low_Normal/PredictTerm success
+Time Sun Oct 15 15:34:48 2023 Write results/MLP_Low_Normal/SouthGermanCredit success
+Time Sun Oct 15 15:47:21 2023 Write results/MLP_Low_Normal/Wine success
+Time Sun Oct 15 15:59:26 2023 Write results/MLP_Low_Normal/WineRed success
+Time Sun Oct 15 16:11:12 2023 Write results/MLP_Low_Normal/Yeast success
+Time Sun Oct 15 16:22:58 2023 Write results/MLP_Low_Normal/YeastUn success
+Time Sun Oct 15 16:22:58 2023 Classifier:MLP_High_UnNormal start
+Time Sun Oct 15 16:33:21 2023 Write results/MLP_High_UnNormal/Africa success
+Time Sun Oct 15 16:44:04 2023 Write results/MLP_High_UnNormal/BankNote success
+Time Sun Oct 15 16:55:32 2023 Write results/MLP_High_UnNormal/CreditApproval success
+Time Sun Oct 15 17:06:00 2023 Write results/MLP_High_UnNormal/CreditRisk success
+Time Sun Oct 15 18:37:52 2023 Write results/MLP_High_UnNormal/CreditCard success
+Time Sun Oct 15 18:47:39 2023 Write results/MLP_High_UnNormal/Ecoli success
+Time Sun Oct 15 18:58:45 2023 Write results/MLP_High_UnNormal/FakeBills success
+Time Sun Oct 15 19:09:10 2023 Write results/MLP_High_UnNormal/LoanPrediction success
+Time Sun Oct 15 19:19:36 2023 Write results/MLP_High_UnNormal/PageBlock success
+Time Sun Oct 15 19:29:41 2023 Write results/MLP_High_UnNormal/PageBlockDel success
+Time Sun Oct 15 20:55:55 2023 Write results/MLP_High_UnNormal/PredictTerm success
+Time Sun Oct 15 21:07:57 2023 Write results/MLP_High_UnNormal/SouthGermanCredit success
+Time Sun Oct 15 21:18:52 2023 Write results/MLP_High_UnNormal/Wine success
+Time Sun Oct 15 21:29:13 2023 Write results/MLP_High_UnNormal/WineRed success
+Time Sun Oct 15 21:39:16 2023 Write results/MLP_High_UnNormal/Yeast success
+Time Sun Oct 15 21:49:21 2023 Write results/MLP_High_UnNormal/YeastUn success
+Time Sun Oct 15 21:49:21 2023 Classifier:MLP_Low_UnNormal start
+Time Sun Oct 15 21:59:49 2023 Write results/MLP_Low_UnNormal/Africa success
+Time Sun Oct 15 22:10:59 2023 Write results/MLP_Low_UnNormal/BankNote success
+Time Sun Oct 15 22:22:37 2023 Write results/MLP_Low_UnNormal/CreditApproval success
+Time Sun Oct 15 22:33:19 2023 Write results/MLP_Low_UnNormal/CreditRisk success
+Time Mon Oct 16 00:12:49 2023 Write results/MLP_Low_UnNormal/CreditCard success
+Time Mon Oct 16 00:22:38 2023 Write results/MLP_Low_UnNormal/Ecoli success
+Time Mon Oct 16 00:34:05 2023 Write results/MLP_Low_UnNormal/FakeBills success
+Time Mon Oct 16 00:44:38 2023 Write results/MLP_Low_UnNormal/LoanPrediction success
+Time Mon Oct 16 00:55:12 2023 Write results/MLP_Low_UnNormal/PageBlock success
+Time Mon Oct 16 01:05:30 2023 Write results/MLP_Low_UnNormal/PageBlockDel success
+Time Mon Oct 16 02:35:04 2023 Write results/MLP_Low_UnNormal/PredictTerm success
+Time Mon Oct 16 02:47:18 2023 Write results/MLP_Low_UnNormal/SouthGermanCredit success
+Time Mon Oct 16 02:58:20 2023 Write results/MLP_Low_UnNormal/Wine success
+Time Mon Oct 16 03:08:47 2023 Write results/MLP_Low_UnNormal/WineRed success
+Time Mon Oct 16 03:18:56 2023 Write results/MLP_Low_UnNormal/Yeast success
+Time Mon Oct 16 03:29:08 2023 Write results/MLP_Low_UnNormal/YeastUn success
