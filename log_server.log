@@ -134,3 +134,23 @@ Time Mon Oct 16 02:58:20 2023 Write results/MLP_Low_UnNormal/Wine success
 Time Mon Oct 16 03:08:47 2023 Write results/MLP_Low_UnNormal/WineRed success
 Time Mon Oct 16 03:18:56 2023 Write results/MLP_Low_UnNormal/Yeast success
 Time Mon Oct 16 03:29:08 2023 Write results/MLP_Low_UnNormal/YeastUn success
+
+------
+Time Mon Oct 16 09:42:47 2023 Classifier:1 Datasets:16 Main start
+Time Mon Oct 16 09:42:47 2023 Classifier:LogisticRegression start
+Time Mon Oct 16 09:47:48 2023 Write results/LogisticRegression/Africa success
+Time Mon Oct 16 09:52:35 2023 Write results/LogisticRegression/BankNote success
+Time Mon Oct 16 09:58:26 2023 Write results/LogisticRegression/CreditApproval success
+Time Mon Oct 16 10:03:17 2023 Write results/LogisticRegression/CreditRisk success
+Time Mon Oct 16 11:22:58 2023 Write results/LogisticRegression/CreditCard success
+Time Mon Oct 16 11:27:06 2023 Write results/LogisticRegression/Ecoli success
+Time Mon Oct 16 11:32:18 2023 Write results/LogisticRegression/FakeBills success
+Time Mon Oct 16 11:37:08 2023 Write results/LogisticRegression/LoanPrediction success
+Time Mon Oct 16 11:41:48 2023 Write results/LogisticRegression/PageBlock success
+Time Mon Oct 16 11:46:22 2023 Write results/LogisticRegression/PageBlockDel success
+Time Mon Oct 16 13:02:21 2023 Write results/LogisticRegression/PredictTerm success
+Time Mon Oct 16 13:08:48 2023 Write results/LogisticRegression/SouthGermanCredit success
+Time Mon Oct 16 13:13:57 2023 Write results/LogisticRegression/Wine success
+Time Mon Oct 16 13:18:30 2023 Write results/LogisticRegression/WineRed success
+Time Mon Oct 16 13:22:54 2023 Write results/LogisticRegression/Yeast success
+Time Mon Oct 16 13:27:10 2023 Write results/LogisticRegression/YeastUn success
