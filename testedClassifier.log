@@ -27,11 +27,12 @@ RandomForestClassifier
 'LGBMClassifier',
 'CatBoostClassifier',
 'HistGradientBoostingClassifier'
+'GradientBoostingClassifier',
+'AdaBoostClassifier',
+'LogisticRegression'
 
 testing:
 workstation
-'GradientBoostingClassifier',
-'AdaBoostClassifier',
+
 
 server
-'LogisticRegression'
